@@ -76,7 +76,10 @@ public class ArrayListInicio {
         System.out.println("Ordenado"+ nomes.toString());
         Collections.reverse(nomes);
         System.out.println("Ordem Reversa: "+ nomes.toString());
-        
+
+        nomes.remove("JJ");
+        Collections.sort(nomes);
+        System.out.println("Nomes sem o JJ: " + nomes.toString());        
     }// fim da main
 
 }//fim geral
