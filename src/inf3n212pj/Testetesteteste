@@ -1,0 +1,84 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Casa;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author camil
+ */
+public class DESESPERO {
+    
+    
+ public static void main(String[] args) {
+        
+          Scanner leia = new Scanner(System.in);
+          System.out.println("-- Verificador de Triângulo --");
+          System.out.println("Informe os valores e identifique o tipo do triângulo! ");
+       
+             
+          int opM = 0;  
+          menu();
+          opM = leia.nextInt();
+          
+          
+            switch(opM){//ESCOLHA
+               case 1:
+                   validar();
+                   break;
+                   
+               case 0:
+                   System.out.println("Aplicação finalizada pelo usuário.");
+                   break;
+               
+               default:
+                   System.out.println("Opção Invalida , tente novamente. ");
+                   break;
+            }  
+        }//MAIN
+
+    public static void menu(){
+             System.out.println("1 - Verificar Triangulo");
+             System.out.println("0 - Sair");
+             System.out.print("Digite a opção escolhida: ");
+         }
+
+    public static void validar(){
+       
+       int A = 0 ,B = 0 ,C = 0;
+
+        Scanner leia = new Scanner(System.in);
+                System.out.print("Digite o 1º lado do Triangulo: ");
+        A = leia.nextInt();
+        
+                System.out.print("Digite o 2º lado do Triangulo: ");
+        B = leia.nextInt();
+        
+                System.out.print("Digite o 3º lado do Triangulo: ");
+        C = leia.nextInt();
+        
+           if((A < B + C)&&(B < A + C)&&(C < A + B))//SE FOR TRIÂNGULO INICIA TESTE
+           {
+           if((A == B)&&(B == C))
+           {
+                System.out.println("Os valores informados formam um triângulo EQUILÁTERO. ");
+           }
+           else if((A == C)||(B == C)||(A != B))
+                   {
+                System.out.println("Os valores informados formam um triângulo ISÓCELES. ");
+            }
+           else{
+                System.out.println("Os valores informados formam um triângulo ESCALENO. ");
+               }
+}
+//FIM
+           else{
+                  System.out.println("Os valores informados não formam um triângulo"); 
+                   }
+   }
+}     
+   
